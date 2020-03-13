@@ -1,3 +1,13 @@
-#This is the new test
-#This line is added in pull-request-demo
-#This is the line from demo2 branch
+# Configure the Azure Provider
+provider "azurerm" {
+  # whilst the `version` attribute is optional, we recommend pinning to a given version of the Provider
+  version = "=2.0.0"
+  features {}
+}
+
+# Create a resource group
+resource "azurerm_resource_group" "example" {
+  name     = "tf2-rg"
+  location = "East US"
+}
+
